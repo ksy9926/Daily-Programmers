@@ -1,13 +1,11 @@
 def solution(n):
     answer = ""
     result = 0
-    
     while n != 0:
         answer = str(n%3) + answer
         n = n // 3
     
     temp = 0
-    
     for i in answer:
         result += (3 ** (temp)) * int(i)
         temp += 1
