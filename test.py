@@ -1,8 +1,9 @@
-test = [[1,2], [3,4], [5,6]]
+import re
 
-def test_func(a):
-    return a[0]+a[1]
+s = "1D2S#10S"
 
-result = list(map(test_func, test))
+p = re.compile('(\d+)([SDT])([*#]?)')
+q = re.compile('\d+[SDT][*#]?')
 
-print(result)
+print(p.findall(s))  # [('1', 'D', ''), ('2', 'S', '#'), ('10', 'S', '')]
+print(q.findall(s))  # ['1D', '2S#', '10S']
