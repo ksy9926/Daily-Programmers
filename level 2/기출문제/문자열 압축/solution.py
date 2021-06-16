@@ -7,7 +7,6 @@ def solution(s):
         last = ""
         
         for j in range(l//gap):
-            print(gap, last, answer)
             if last:
                 if last == s[gap * j:gap * j +gap]:
                     control += 1
@@ -15,13 +14,10 @@ def solution(s):
                         answer[-1] += 1
                     elif 3 <= control <= 9:
                         pass
-                    elif 10 <= control <= 99:
+                    elif 10 == control:
                         answer[-1] += 1
-                    elif 100 <= control <= 999:
+                    elif 100 == control:
                         answer[-1] += 1
-                    else:
-                        answer[-1] += gap
-                        last = s[gap * j:gap * j +gap]
                 else:
                     answer[-1] += gap
                     control = 1
@@ -34,5 +30,3 @@ def solution(s):
         answer[-1] += l % gap
             
     return min(answer)
-
-print(solution("aaaaaaaaaa"))
